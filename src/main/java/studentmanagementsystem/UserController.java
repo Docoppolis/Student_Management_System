@@ -3,11 +3,13 @@ package studentmanagementsystem;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
 
-@Controller("/students")
-public class StudentController {
+@Controller("/user")
+public class UserController {
 
+    //Test to make sure controller is working
     @Get("/")
     public String index() {
-        return "Student Controller is working!";
+        return "User Controller is working!";
     }
+
 }
