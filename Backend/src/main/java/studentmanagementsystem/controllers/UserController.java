@@ -1,4 +1,4 @@
-package studentmanagementsystem;
+package studentmanagementsystem.controllers;
 
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Get;
