@@ -1,4 +1,4 @@
-package studentmanagementsystem;
+package studentmanagementsystem.controllers;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
