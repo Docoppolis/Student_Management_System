@@ -18,7 +18,7 @@ dependencies {
     compileOnly("io.micronaut:micronaut-http-client")
     runtimeOnly("ch.qos.logback:logback-classic")
     testImplementation("io.micronaut:micronaut-http-client")
-    implementation("de.mkammerer:argon2-jvm-nolibs:2.11")
+    implementation("de.mkammerer:argon2-jvm:2.11")
     implementation(files("/usr/share/java/postgresql-jdbc.jar"))
 }
 
