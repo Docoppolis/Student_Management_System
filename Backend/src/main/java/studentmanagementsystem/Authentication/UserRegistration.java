@@ -1,4 +1,4 @@
-package studentmanagementsystem;
+package studentmanagementsystem.Authentication;
 
 import io.micronaut.serde.annotation.Serdeable;
 
