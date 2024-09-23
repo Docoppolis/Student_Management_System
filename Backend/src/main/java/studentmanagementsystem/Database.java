@@ -7,7 +7,7 @@ import java.util.Properties;
 
 public class Database
 {
-	Connection conn;
+	public Connection conn;
 	
 	public Database()
 	{
