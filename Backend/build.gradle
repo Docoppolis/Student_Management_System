@@ -21,6 +21,8 @@ dependencies {
     runtimeOnly("ch.qos.logback:logback-classic")
     runtimeOnly("org.postgresql:postgresql")
     testImplementation("io.micronaut:micronaut-http-client")
+    implementation("de.mkammerer:argon2-jvm:2.11")
+    implementation(files("path/to/postgres.jar"))
 }
 
 
