@@ -1,0 +1,109 @@
+.studentManagement {
+  	margin: 0;
+}
+.studentManagementSystemContainer {
+  	position: relative;
+  	font-size: 64px;
+  	font-weight: 500;
+  	text-align: center;
+}
+.line {
+  	align-self: stretch;
+  	position: relative;
+  	border-top: 2px solid #000;
+  	box-sizing: border-box;
+  	height: 2px;
+}
+.inputLabel {
+  	align-self: stretch;
+  	position: relative;
+  	line-height: 100%;
+}
+.enterInput {
+  	width: 335px;
+  	position: relative;
+  	line-height: 100%;
+  	display: inline-block;
+  	flex-shrink: 0;
+}
+.input {       
+	width: 355px;
+  	position: relative;
+  	box-shadow: 4px 4px 0px #000;
+  	background-color: #f7f7ff;
+  	border: 2px solid #000;
+  	box-sizing: border-box;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 10px;
+  	text-align: left;
+  	font-size: 16px;
+  	color: #000;
+  	font-family: Inter;
+}
+.enterInputWrapper {
+  	align-self: stretch;
+  	box-shadow: 4px 4px 0px #000;
+  	background-color: #f7f7ff;
+  	border: 2px solid #000;
+  	display: flex;
+  	flex-direction: row;
+  	align-items: flex-start;
+  	justify-content: center;
+  	padding: 10px;
+}
+.inputBox {
+  	width: 355px;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: flex-start;
+  	justify-content: flex-start;
+  	gap: 6px;
+}
+.login {
+  	position: absolute;
+  	top: 30%;
+  	left: 40.45%;
+  	line-height: 100%;
+}
+.loginButton {
+  	width: 220px;
+  	position: relative;
+  	box-shadow: 4px 4px 0px #000;
+  	background-color: #ea526f;
+  	border: 2px solid #000;
+  	box-sizing: border-box;
+  	height: 40px;
+  	cursor: pointer;
+}
+.loginComponent {
+  	box-shadow: 4px 4px 0px #000;
+  	background-color: #f7f7ff;
+  	border: 2px solid #000;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 40px 80px;
+  	gap: 22px;
+}
+.studentLogin {
+  	width: 100%;
+  	position: relative;
+  	background-color: #7692ff;
+  	height: 1024px;
+  	overflow: hidden;
+  	display: flex;
+  	flex-direction: column;
+  	align-items: center;
+  	justify-content: center;
+  	padding: 364px 400px;
+  	box-sizing: border-box;
+  	text-align: left;
+  	font-size: 16px;
+  	color: #000;
+  	font-family: Inter;
+}
+
