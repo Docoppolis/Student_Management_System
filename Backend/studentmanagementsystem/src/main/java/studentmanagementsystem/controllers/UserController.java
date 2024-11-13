@@ -3,6 +3,7 @@ package studentmanagementsystem.controllers;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.util.UUID;
 
 import de.mkammerer.argon2.Argon2;
 import de.mkammerer.argon2.Argon2Factory;
@@ -17,6 +18,8 @@ import studentmanagementsystem.Authentication.UserLogin;
 @Controller("/user")
 public class UserController
 {	
+	public static final Argon2 argon2 = Argon2Factory.create();
+	
 	public String UserRegistrationReply(boolean success)
 	{
 		String reply = "";
@@ -33,11 +36,11 @@ public class UserController
 	public HttpResponse<String> RegisterUser(@Body UserRegistration req)
 	{
 		try {
-			PreparedStatement ps = Application.db.conn.prepareStatement("insert into users values (?, ?, null)");
+			PreparedStatement ps = Application.db.conn.prepareStatement("insert into users values (?, ?, null, ?)");
 			ps.setString(1, req.getEmail());
-	    	Argon2 argon2 = Argon2Factory.create();
 	    	String hash = argon2.hash(10, 65536, 1, req.getPassword().toCharArray());
 			ps.setString(2, hash);
+			ps.setString(3, UUID.randomUUID().toString());
 			ps.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -45,22 +48,23 @@ public class UserController
 		}
 		return HttpResponse.ok(UserRegistrationReply(true));
 	}
-        @Post("/login")
-        public HttpResponse<String> LoginUser(@Body UserLogin req)
-        {
-                try {
-                        PreparedStatement ps = Application.db.conn.prepareStatement("select password from users where email = ?");
+	@Post("/login")
+	public HttpResponse<String> LoginUser(@Body UserLogin req)
+	{
+		try {
+			PreparedStatement ps = Application.db.conn.prepareStatement("select password, auth from users where email = ?");
 			ps.setString(1, req.getEmail());
-                	ResultSet rs = ps.executeQuery();
-			if (rs.next() && rs.getString("password").equals(req.getPassword()))
+			ResultSet rs = ps.executeQuery();
+			if (rs.next() && argon2.verify(rs.getString("password"), req.getPassword()))
 			{
-				return HttpResponse.ok("{\"status\": \"success\", \"auth\":\"0x151\"}");
+				return HttpResponse.ok("{\"status\": \"success\", \"auth\":\"" + rs.getString("auth") + "\"}");
 			}
-                } catch (SQLException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                }
-                return HttpResponse.ok("{\"status\": \"failure\", \"error\": \"invalid login\"}");
-        }
+		} 
+		catch (SQLException e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return HttpResponse.ok("{\"status\": \"failure\", \"error\": \"invalid login\"}");
+	}
 
 }
