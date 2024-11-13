@@ -18,8 +18,20 @@ const StudentLogin:FunctionComponent = () => {
 		});
 		const result = await response.json();
 		if (result.status === "success")
-    			router.push('/StudentSchedule');
+		{
+			var curTime = new Date();
+			curTime.setDate(curTime.getDate() + 7);
+			document.cookie = "auth=" + result.auth + ";" + "expires=" + curTime.toUTCString() + ";path=/";
+			router.push('/StudentSchedule');
+		}
+		else
+			alert("Invalid login!");
   	}, []);
+
+	const handlekeyDown = (event) => {
+		if (event.key === "Enter")
+			onLoginButtonContainerClick();
+	}
   	
   	return (
     		<div className={styles.studentLogin}>
@@ -33,13 +45,13 @@ const StudentLogin:FunctionComponent = () => {
 						<div className={styles.inputbox}>
 							<div className={styles.inputLabel}>Email Address</div>
 						</div>
-						<input type="text" id="email" name="email" className={styles.input}/>
+						<input type="text" id="email" name="email" onKeyDown = {handlekeyDown} className={styles.input}/>
 					</div>
 					<div>
 						<div className={styles.inputBox}>
 							<div className={styles.inputLabel}>Password</div>
 						</div>
-						<input type="text" id="password" name="password" className={styles.input}/>
+						<input type="password" id="password" name="password" onKeyDown = {handlekeyDown} className={styles.input}/>
         				</div>
         				<div className={styles.loginButton} onClick={onLoginButtonContainerClick}>
           					<div className={styles.login}>Login</div>

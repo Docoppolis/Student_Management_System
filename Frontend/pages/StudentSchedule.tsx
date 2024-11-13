@@ -1,35 +1,55 @@
 import { FunctionComponent, useCallback } from 'react';
 import styles from '../styles/StudentScheduleView.module.css';
-
+import { useRouter } from 'next/router';
 
 const StudentScheduleView:FunctionComponent = () => {
-  	
-  	const onButtonContainerClick = useCallback(() => {
-    		// Add your code here
+	const router = useRouter();  	
+
+	const onScheduleClick = useCallback(() => {
+		router.push("/StudentSchedule")
+	}, []);
+
+  	const onDegreeProgressClick = useCallback(() => {
+    		router.push("/StudentDegreeProgressView");
   	}, []);
-  	
+
+	const onSearchClick = useCallback(() => {
+	router.push("/DegreeProgress");
+	}, []);
+
+	const onRegistrationClick = useCallback(() => {
+		router.push("/DegreeProgress");
+	}, []);
+
+	const onWhatifClick = useCallback(() => {
+		router.push("/DegreeProgress");
+	}, []);
+
+	const onLogoutClick = useCallback(() => {
+		router.push("/");
+	}, []);
+		
   	return (
     		<div className={styles.studentScheduleView}>
       			<div className={styles.tab}>
         				<div className={styles.left}>
-          					<div className={styles.button}>
-            						<div className={styles.text}>Schedule</div>
-            						<div className={styles.buttonChild} />
-          					</div>
-          					<div className={styles.logout} onClick={onButtonContainerClick}>
+          					<div className={styles.logout} onClick={onScheduleClick}>
+								<div className={styles.text}>Schedule</div>
+							</div>
+          					<div className={styles.logout} onClick={onDegreeProgressClick}>
             						<div className={styles.text}>Degree Progress</div>
           					</div>
-          					<div className={styles.logout} onClick={onButtonContainerClick}>
+          					<div className={styles.logout} onClick={onSearchClick}>
             						<div className={styles.text}>Search Courses</div>
           					</div>
-          					<div className={styles.logout} onClick={onButtonContainerClick}>
+          					<div className={styles.logout} onClick={onRegistrationClick}>
             						<div className={styles.text}>Registration</div>
           					</div>
-          					<div className={styles.logout} onClick={onButtonContainerClick}>
+          					<div className={styles.logout} onClick={onWhatifClick}>
             						<div className={styles.text}>What-if Analysis</div>
           					</div>
         				</div>
-        				<div className={styles.logout} onClick={onButtonContainerClick}>
+        				<div className={styles.logout} onClick={onLogoutClick}>
           					<div className={styles.text}>Logout</div>
         				</div>
       			</div>
