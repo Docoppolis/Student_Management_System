@@ -1,0 +1,335 @@
+.text {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    cursor: pointer;
+}
+.buttonChild {
+    align-self: stretch;
+    position: relative;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+    height: 1px;
+}
+.button4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 30px 20px;
+    gap: 10px;
+}
+
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tab {
+    position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    align-self: stretch;
+    background-color: #f7f7ff;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+.infoIcon {
+    width: 24px;
+    position: relative;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.text6 {
+    position: relative;
+    line-height: 100%;
+    font-weight: 600;
+}
+.selectTheNumberOfClassesT {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding-left: 21px;
+}
+.textParent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.instructions {
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 15px 30px;
+    gap: 20px;
+}
+.header {
+    background-color: #ea526f;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+}
+.textBox {
+    width: 40px; /* Adjust width to make it smaller */
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.textBoxInput {
+    width: 100%; /* Full width to fill .inputBox */
+    height: 100%; /* Full height to fill .inputBox */
+    border: none; /* Remove border on the input */
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the text in the input */
+    background-color: transparent; /* Match background to .inputBox */
+    font-size: inherit; /* Inherit font-size from .inputBox */
+    font-weight: inherit; /* Inherit font-weight from .inputBox */
+    padding: 0; /* Remove any padding for exact fit */
+    margin: 0; /* Remove margin to avoid spacing issues */
+    box-sizing: border-box; /* Ensures width/height include padding/border */
+}
+
+.textBoxParent {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.body1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+}
+.card {
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.header1 {
+    align-self: stretch;
+    background-color: #ea526f;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 30px;
+}
+.infoParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.body2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 10px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.top {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.courseColumns {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+.divider {
+    align-self: stretch;
+    position: relative;
+    border-top: 2px solid #000;
+    box-sizing: border-box;
+    height: 2px;
+}
+
+.courseTitle {
+    width: 170px; /* Set width to match other titles */
+    height: 26px; /* Set height as needed */
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.courseTitleInput {
+    width: 100%; /* Full width to fill .courseTitle */
+    height: 100%; /* Full height to fill .courseTitle */
+    border: none; /* Remove border on the input */
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the text in the input */
+    background-color: transparent; /* Match background to .courseTitle */
+    font-size: inherit; /* Inherit font-size from .courseTitle */
+    font-weight: inherit; /* Inherit font-weight from .courseTitle */
+    padding: 0; /* Remove any padding for exact fit */
+    margin: 0; /* Remove margin to avoid spacing issues */
+    box-sizing: border-box; /* Ensures width/height include padding/border */
+}
+
+
+.grade1 {
+    width: 31px;
+    height: 26px;/* Set a fixed height for consistency */
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    font-size: 13px;
+    padding: 0; /* Remove padding to allow full input size */
+}
+
+.gradeInput {
+    width: 100%; /* Full width to fill .grade1 */
+    height: 100%; /* Full height to fill .grade1 */
+    border: none; /* Remove input border */
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the text in the input */
+    background-color: transparent; /* Inherit background from .grade1 */
+    font-size: inherit; /* Inherit font-size from .grade1 */
+    font-weight: 500; /* Adjust font weight as needed */
+}
+
+.credits1 {
+    width: 31px; /* Set the width as needed */
+    height: 26px; /* Set the height as needed */
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+}
+
+.creditsInput {
+    width: 100%; /* Full width to fill .credits1 */
+    height: 100%; /* Full height to fill .credits1 */
+    border: none; /* Remove border on the input */
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the text in the input */
+    background-color: transparent; /* Match background to .credits1 */
+    font-size: inherit; /* Inherit font-size from .credits1 */
+    font-weight: inherit; /* Inherit font-weight from .credits1 */
+    padding: 0; /* Remove any padding for exact fit */
+    margin: 0; /* Remove margin to avoid spacing issues */
+    box-sizing: border-box; /* Ensures width/height include padding/border */
+}
+
+.course {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+}
+.bottom {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+.body {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+    gap: 10px;
+}
+.studentWhatIfView {
+    width: 100%;
+    position: relative;
+    background-color: #7692ff;
+    height: 1024px;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
+}
+
+.checkIcon {
+    width: 16px;
+    position: relative;
+    height: 11px;
+}
+
+.pushDown {
+    transition: transform 0.1s ease;
+    cursor: pointer;
+  }
+  
+  .pushDown:active {
+    transform: translateY(2px); /* Pushes the image down by 4 pixels */
+  }
