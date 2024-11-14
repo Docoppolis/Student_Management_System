@@ -14,6 +14,7 @@ import io.micronaut.http.annotation.Post;
 import studentmanagementsystem.Application;
 import studentmanagementsystem.Authentication.UserRegistration;
 import studentmanagementsystem.Authentication.UserLogin;
+import studentmanagementsystem.Authentication.ValidateLogin;
 
 @Controller("/user")
 public class UserController
@@ -48,6 +49,7 @@ public class UserController
 		}
 		return HttpResponse.ok(UserRegistrationReply(true));
 	}
+
 	@Post("/login")
 	public HttpResponse<String> LoginUser(@Body UserLogin req)
 	{
@@ -65,6 +67,23 @@ public class UserController
 			e.printStackTrace();
 		}
 		return HttpResponse.ok("{\"status\": \"failure\", \"error\": \"invalid login\"}");
+	}
+
+	@Post("/validate")
+	public HttpResponse<String> ValidateUser(@Body ValidateLogin req)
+	{
+		try {
+			PreparedStatement ps = Application.db.conn.prepareStatement("select auth, usertype from users where email = ?");
+			ps.setString(1, req.getEmail());
+			ResultSet rs = ps.executeQuery();
+			if (rs.next() && req.getAuth().equals(rs.getString("auth")))
+				return HttpResponse.ok("{\"status\": \"success\", \"usertype\":" + rs.getInt("usertype") + "}");
+		} 
+		catch (SQLException e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return HttpResponse.ok("{\"status\": \"failure\", \"error\": \"invalid authorization\"}");
 	}
 
 }
