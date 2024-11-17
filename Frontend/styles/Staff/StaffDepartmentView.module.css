@@ -80,12 +80,25 @@
   	justify-content: flex-start;
   	gap: 10px;
 }
-.minusIcon {
-  	width: 32px;
-  	position: relative;
-  	height: 32px;
-  	overflow: hidden;
-  	flex-shrink: 0;
+.textBoxInput {
+    width: 100%; /* Full width to fill .inputBox */
+    height: 100%; /* Full height to fill .inputBox */
+    border: none; /* Remove border on the input */
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the text in the input */
+    background-color: transparent; /* Match background to .inputBox */
+    font-size: inherit; /* Inherit font-size from .inputBox */
+    font-weight: inherit; /* Inherit font-weight from .inputBox */
+    padding: 0; /* Remove any padding for exact fit */
+    margin: 0; /* Remove margin to avoid spacing issues */
+    box-sizing: border-box; /* Ensures width/height include padding/border */
+}
+
+.plusIcon, .minusIcon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.1s ease; /* Smooth transition for the push-down */
 }
 .major {
   	align-self: stretch;
@@ -124,9 +137,9 @@
   	flex-shrink: 0;
 }
 .checkIcon {
-  	width: 24px;
+  	width: 32px;
   	position: relative;
-  	height: 24px;
+  	height: 32px;
   	overflow: hidden;
   	flex-shrink: 0;
 }
@@ -150,18 +163,27 @@
   	gap: 15px;
 }
 .staffDepartmentView {
-  	width: 100%;
-  	position: relative;
-  	background-color: #7692ff;
-  	height: 1024px;
-  	overflow: hidden;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: flex-start;
-  	justify-content: flex-start;
-  	text-align: center;
-  	font-size: 16px;
-  	color: #000;
-  	font-family: Inter;
+	width: 100%;
+    position: relative;
+    background-color: #7692ff;
+    min-height: 100vh;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
 }
 
+.pushDown {
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+  
+  .pushDown:active {
+    transform: translateY(2px); /* Pushes the image down by 4 pixels */
+}
+  

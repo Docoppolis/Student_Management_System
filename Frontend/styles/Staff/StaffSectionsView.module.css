@@ -18,7 +18,7 @@
     box-sizing: border-box;
     height: 1px;
 }
-.button2 {
+.button1 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -33,9 +33,9 @@
     justify-content: flex-start;
 }
 .tab {
-    position: sticky;
-    top: 0; /* Sticks to the top of the viewport */
-    z-index: 1000; /* Ensures it stays on top of other elements */
+  position: sticky;
+  top: 0; /* Sticks to the top of the viewport */
+  z-index: 1000; /* Ensures it stays on top of other elements */
     align-self: stretch;
     background-color: #f7f7ff;
     border-bottom: 2px solid #000;
@@ -54,33 +54,6 @@
     align-items: center;
     justify-content: center;
     padding: 15px 0px;
-}
-.chevronDownIcon {
-    width: 24px;
-    position: relative;
-    height: 24px;
-    overflow: hidden;
-    flex-shrink: 0;
-}
-.dropdown {
-    width: 240px;
-    box-shadow: 4px 4px 0px #000;
-    background-color: #ececec;
-    border: 2px solid #000;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-}
-.term {
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 5px;
 }
 .typeCoursePrefixWrapper {
     align-self: stretch;
@@ -102,7 +75,7 @@
     justify-content: center;
     gap: 5px;
 }
-.button5 {
+.button6 {
     align-self: stretch;
     box-shadow: 4px 4px 0px #000;
     background-color: #ea526f;
@@ -112,19 +85,18 @@
     align-items: center;
     justify-content: center;
     padding: 9px 10px;
-    transition: transform 0.1s ease, box-shadow 0.1s ease;
-    cursor: pointer; /* Adds a pointer cursor for clickable effect */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer; /* Adds a pointer cursor for clickable effect */
 }
 
-.button5:active {
-    transform: translateY(2px); /* Moves the button down by 2px */
-    box-shadow: 2px 2px 0px #000; /* Reduces the shadow to show pressed effect */
+.button6:active {
+  transform: translateY(2px); /* Moves the button down by 2px */
+  box-shadow: 2px 2px 0px #000; /* Reduces the shadow to show pressed effect */
 }
 
-.button5:hover {
-    background-color: #d9455f; /* Slightly darker color on hover */
+.button6:hover {
+  background-color: #d9455f; /* Slightly darker color on hover */
 }
-
 .body {
     display: flex;
     flex-direction: column;
@@ -168,7 +140,7 @@
     justify-content: center;
     padding: 10px;
 }
-.abbreviation {
+.title {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -189,18 +161,8 @@
     align-items: center;
     justify-content: flex-start;
 }
-.f24 {
-    width: 50px;
-    position: relative;
-    line-height: 100%;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
 .edu1004 {
-    align-self: stretch;
+    flex: 1;
     background-color: #f7f7ff;
     border: 1px solid #000;
     display: flex;
@@ -209,8 +171,29 @@
     justify-content: space-between;
     padding: 5px 10px;
 }
-.mw200pm {
-    margin: 0;
+
+.icon {
+  width: 36px;
+  position: relative;
+  height: 36px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.minusIcon {
+    width: 36px;
+    position: relative;
+    height: 36px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.course {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 10px;
+    gap: 10px;
 }
 .bodylist {
     align-self: stretch;
@@ -218,7 +201,6 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 10px;
 }
 .body1 {
     align-self: stretch;
@@ -268,19 +250,29 @@
     flex-direction: row;
     align-items: flex-start;
     justify-content: flex-start;
+    padding: 30px;
 }
-.studentSearchcoursesInputView {
-    width: 100%;
-    position: relative;
-    background-color: #7692ff;
-    min-height: 100vh;
-    /*overflow: hidden;*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    text-align: center;
-    font-size: 16px;
-    color: #000;
-    font-family: Inter;
+.staffCoursesView {
+  width: 100%;
+  position: relative;
+  background-color: #7692ff;
+  min-height: 100vh;
+  /*overflow: hidden;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  font-family: Inter;
+}
+
+.pushDown {
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+
+.pushDown:active {
+  transform: translateY(2px); /* Pushes the image down by 4 pixels */
 }

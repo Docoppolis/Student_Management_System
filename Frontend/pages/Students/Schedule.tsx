@@ -2,10 +2,12 @@ import { FunctionComponent, useCallback } from 'react';
 import styles from '../../styles/Students/StudentScheduleView.module.css';
 import { useRouter } from 'next/router';
 import CourseComponent from '../../components/Students/CourseComponent';
+import { useEffect, useState } from 'react';
 
 const StudentScheduleView:FunctionComponent = () => {
 	
-	const router = useRouter();  	
+	const router = useRouter();
+	const [classes, setClasses] = useState([]);
 
 	const onScheduleClick = useCallback(() => {
 		router.push("/Students/Schedule")
@@ -33,6 +35,52 @@ const StudentScheduleView:FunctionComponent = () => {
 		router.push("/");
 	}, []);
 		
+	const onPageload = useEffect(() => {
+		const checkAuth = async () => {
+ 			if (document.cookie.length === 0)
+				return;
+			var cookies = document.cookie.split(";");
+			if (cookies.length != 2)
+			{
+				document.cookie = "auth=; Max-Age=0; path=/";
+				document.cookie = "email=; Max-Age=0; path=/";
+				return;
+			}
+			const response = await fetch('http://38.45.71.234:8080/user/validate', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ "auth": cookies[0].substring(5), "email":cookies[1].substring(7)})
+			});
+			const result = await response.json();
+			return result.status === "success";
+		}
+
+		const getCourses = async () => {
+			var cookies = document.cookie.split(";");
+			const response = await fetch('http://38.45.71.234:8080/user/student/schedule', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ "auth": cookies[0].substring(5), "email":cookies[1].substring(7)})
+			});
+			const result = await response.json();
+			var class_list = []
+			if (result.status === "success")
+			{
+				for (var i = 0; i < Object.keys(result).length - 1; i++)
+					class_list.push([result[i.toString()].title, result[i.toString()].loc, result[i.toString()].time, result[i.toString()].code]);
+
+			}
+			setClasses(class_list);
+		}
+
+		//checkAuth();
+		//getCourses();
+	}, []);
+
   	return (
     		<div className={styles.studentScheduleView}>
       			<div className={styles.tab}>
@@ -60,10 +108,17 @@ const StudentScheduleView:FunctionComponent = () => {
       			</div>
       			<div className={styles.pageBody}>
         				<div className={styles.courses}>
+        				{
+							classes.length > 0 ? (classes.map((course, index) => (
+								<CourseComponent name={course[0]} location={course[1]} time={course[2]} code={course[3]}/>
+							)))
+							:
+							(<><CourseComponent name="Introduction to Robotics" location="CWY 122" time="3:30pm - 4:45pm" code="COP 1220"/>
 							<CourseComponent name="Introduction to Robotics" location="CWY 122" time="3:30pm - 4:45pm" code="COP 1220"/>
 							<CourseComponent name="Introduction to Robotics" location="CWY 122" time="3:30pm - 4:45pm" code="COP 1220"/>
-							<CourseComponent name="Introduction to Robotics" location="CWY 122" time="3:30pm - 4:45pm" code="COP 1220"/>
-							<CourseComponent name="Introduction to Robotics" location="CWY 122" time="3:30pm - 4:45pm" code="COP 1220"/>
+							<CourseComponent name="Introduction to Robotics" location="CWY 122" time="3:30pm - 4:45pm" code="COP 1220"/></>
+						)
+						}
         				</div>
       			</div>
     		</div>);

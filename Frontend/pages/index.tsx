@@ -11,11 +11,12 @@ const StudentLogin:FunctionComponent = () => {
 		switch (userType)
 		{
 			case 0:
-				return "StudentSchedule";
+				return "/Students/Schedule";
 			case 1:
-				return "putotherusertypes in here and below";
+				return "put other usertypes in here and below";
+			default:
+				return "";
 		}
-		return "";
 	}
 
 	const onPageload = useEffect(() => {
@@ -29,7 +30,7 @@ const StudentLogin:FunctionComponent = () => {
 				document.cookie = "email=; Max-Age=0; path=/";
 				return;
 			}
-			const response = await fetch('http://38.45.71.234:8080/user/validate', {
+			const response = await fetch('http://localhost:8080/user/validate', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -48,7 +49,7 @@ const StudentLogin:FunctionComponent = () => {
 		var passwordElement = document.getElementById('password') as HTMLInputElement;
 		var email = emailElement.value;
 		var password = passwordElement.value;
-		const response = await fetch('http://38.45.71.234:8080/user/login', {
+		const response = await fetch('http://localhost:8080/user/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -62,7 +63,7 @@ const StudentLogin:FunctionComponent = () => {
 			curTime.setDate(curTime.getDate() + 7);
 			document.cookie = "auth=" + result.auth + ";" + "expires=" + curTime.toUTCString() + ";path=/";
 			document.cookie = "email=" + email + ";" + "expires=" + curTime.toUTCString() + ";path=/";
-			router.push('/StudentSchedule');
+			router.push(getHomePage(result.usertype))
 		}
 		else
 			alert("Invalid login!");

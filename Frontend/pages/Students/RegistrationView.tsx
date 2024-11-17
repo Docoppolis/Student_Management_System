@@ -1,11 +1,11 @@
-import { FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback, useEffect } from 'react';
 import styles from '../../styles/Students/StudentRegistrationView.module.css';
 import { useRouter } from 'next/router';
 import RegistrationCourseComponent from '@/components/Students/RegistrationCourseComponent';
 
 const StudentRegistrationView:FunctionComponent = () => {
   	
-    const router = useRouter();  	
+    const router = useRouter();
 
 	const onScheduleClick = useCallback(() => {
 		router.push("/Students/Schedule")
@@ -16,7 +16,7 @@ const StudentRegistrationView:FunctionComponent = () => {
   	}, []);
 
 	const onSearchClick = useCallback(() => {
-	router.push("/Students/SearchCoursesInputView");
+		router.push("/Students/SearchCoursesInputView");
 	}, []);
 
 	const onRegistrationClick = useCallback(() => {
@@ -33,6 +33,61 @@ const StudentRegistrationView:FunctionComponent = () => {
 		router.push("/");
 	}, []);
   	
+	var add_drops = {
+		"auth":"",
+		"email":"",
+		"crn0":0,
+		"crn1":0,
+		"crn2":0,
+		"crn3":0,
+		"crn4":0,
+		"crn5":0
+	};
+
+	const onPageload = useEffect(() => {
+		const checkAuth = async () => {
+ 			if (document.cookie.length === 0)
+				return;
+			var cookies = document.cookie.split(";");
+			if (cookies.length != 2)
+			{
+				document.cookie = "auth=; Max-Age=0; path=/";
+				document.cookie = "email=; Max-Age=0; path=/";
+				return;
+			}
+			const response = await fetch('http://localhost:8080/user/validate', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ "auth": cookies[0].substring(5), "email":cookies[1].substring(7)})
+			});
+			const result = await response.json();
+			return result.status === "success";
+		}
+
+		checkAuth();
+	}, []);
+
+	const onRegister = async () => {
+		var cookies = document.cookie.split(";");
+		add_drops.auth = cookies[0].substring(5);
+		add_drops.email = cookies[1].substring(7);
+		const response = await fetch('http://localhost:8080/user/student/register', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(add_drops)
+		});
+		const result = await response.json();
+		if (result.status === "success")
+		{
+			for (var i = 0; i < Object.keys(result).length - 1; i++)
+				alert(result[i.toString()].crn + " " + result[i.toString()].message);
+		}
+	};
+
   	return (
     		<div className={styles.studentRegistrationView}>
       			<div className={styles.tab}>
@@ -73,7 +128,7 @@ const StudentRegistrationView:FunctionComponent = () => {
                                             <input className={styles.textBox1} type="text" placeholder="Enter CRN" maxLength={5}/>
                                             <input className={styles.textBox1} type="text" placeholder="Enter CRN" maxLength={5}/>
                                             <input className={styles.textBox1} type="text" placeholder="Enter CRN" maxLength={5}/>
-                                            <img className={`${styles.plusIcon} ${styles.pushDown}`} alt="Plus Icon" src="/Plus.svg" />
+                                            <img className={`${styles.plusIcon} ${styles.pushDown}`} alt="Plus Icon" src="/Plus.svg" onClick = {onRegister}/>
                                             <img className={`${styles.minusIcon} ${styles.pushDown}`} alt="Minus Icon" src="/Minus.svg" />
                                         </div>
                                     </div>

@@ -197,7 +197,7 @@
     width: 100%;
     position: relative;
     background-color: #7692ff;
-    height: 1024px;
+    min-height: 100vh;
     /*overflow: hidden;*/
     display: flex;
     flex-direction: column;

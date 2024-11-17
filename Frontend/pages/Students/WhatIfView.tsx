@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback, useState, useEffect } from 'react';
 import styles from '../../styles/Students/StudentWhatIfView.module.css';
 import { useRouter } from 'next/router';
 import WhatIfCourseComponent from '@/components/Students/WhatIfCourseComponent';
@@ -6,7 +6,8 @@ import ReactDOMServer, { renderToString } from 'react-dom/server';
 
 const StudentWhatIfView:FunctionComponent = () => {
   	
-    const router = useRouter();  	
+    const router = useRouter();
+	const [numcourses, setnumcourses] = useState(4);
 
 	const onScheduleClick = useCallback(() => {
 		router.push("/Students/Schedule")
@@ -34,9 +35,42 @@ const StudentWhatIfView:FunctionComponent = () => {
 		router.push("/");
 	}, []);
   	
+	const gradeToGPA = (grade) => {
+		switch (grade.toUpperCase())
+		{
+			case 'A':
+				return 4.0;
+			case 'B':
+				return 3.0;
+			case 'C':
+				return 2.0;
+			case 'D':
+				return 1.0;
+			case 'F':
+				return 0.0;
+			default:
+				return 0.0;
+		}
+	}
+
+	const onGradeChange = (event) => {
+		var points = 0;
+		var credits = 0;
+		for (var i = 0; i < document.getElementById("numcourses").value; i++)
+		{
+			credits += Number(document.getElementById("course" + i + "c").value);
+			points += gradeToGPA(document.getElementById("course" + i).value) * Number(document.getElementById("course" + i + "c").value);
+		}
+		document.getElementById("hypothetical gpa").textContent = "GPA: " + (points / credits).toFixed(2);
+		document.getElementById("hypothetical credits").textContent = "Total Credits: " + credits;
+	}
+
+	useEffect(() => {
+		onGradeChange();
+	});
 
 	const buttonDown = useCallback(async () => {
-		var numcourses = document.getElementById("numcourses").value;
+		/*var numcourses = document.getElementById("numcourses").value;
 		var i = 0;
 		while (document.getElementById("course" + i))
 			i++;
@@ -52,13 +86,14 @@ const StudentWhatIfView:FunctionComponent = () => {
 		}
 		for (var j = i; j < numcourses; j++)
 		{
-			var c = <WhatIfCourseComponent name={"course" + j}/>
+			var c = <WhatIfCourseComponent name={"course" + j} onChange={onGradeChange}/>
 			var elem = document.createElement("div");
 			elem.innerHTML = ReactDOMServer.renderToString(c);
 			courselist.appendChild(elem);
-		}
-
-  	}, []);
+		}*/
+		setnumcourses(document.getElementById("numcourses").value);
+		//onGradeChange();
+	}, []);
 
   	return (
     		<div className={styles.studentWhatIfView}>
@@ -146,8 +181,8 @@ const StudentWhatIfView:FunctionComponent = () => {
               							<div className={styles.body2}>
                 								<div className={styles.infoParent}>
                   									<img className={styles.infoIcon} alt="" src="/Info.svg" />
-                  									<div className={styles.text}>GPA: 3.63</div>
-                  									<div className={styles.text}>Total Credits: 94</div>
+                  									<div className={styles.text} id="hypothetical gpa">GPA: 4.00</div>
+                  									<div className={styles.text} id="hypothetical credits">Total Credits: 12</div>
                 								</div>
               							</div>
             						</div>
@@ -161,9 +196,9 @@ const StudentWhatIfView:FunctionComponent = () => {
           					</div>
           					<div className={styles.divider} />
           					<div className={styles.bottom} id="courselist">
-									{Array.from({ length: 4}, (_, index) => 
+									{Array.from({ length: numcourses }, (_, index) =>
 									(
-										<WhatIfCourseComponent name={"course" + index}/>
+										<WhatIfCourseComponent name={"course" + index} onChange={onGradeChange}/>
 									))}
           					</div>
         				</div>
