@@ -1,0 +1,858 @@
+.filters {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 49px;
+  }
+  .header,
+  .semester {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header {
+    align-self: stretch;
+    background-color: var(--color-indianred-100);
+    border-bottom: 2px solid var(--color-black);
+    flex-direction: row;
+    padding: var(--padding-mini) var(--padding-106xl) var(--padding-xs);
+  }
+  .semester {
+    width: 79px;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .categorySelection {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-8xs);
+  }
+  .semester1 {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .categorySelection1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-8xs);
+  }
+  .text {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .button {
+    align-self: stretch;
+    box-shadow: 4px 4px 0#000;
+    background-color: var(--color-indianred-100);
+    border: 2px solid var(--color-black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-4xs) var(--padding-3xs);
+  }
+  .body,
+  .filtersCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .body {
+    align-self: stretch;
+    align-items: center;
+    padding: var(--padding-8xs) var(--padding-11xl) var(--padding-mini);
+    box-sizing: border-box;
+    gap: var(--gap-3xs);
+    min-width: 300px;
+  }
+  .filtersCard {
+    height: 230px;
+    box-shadow: 4px 4px 0#000;
+    background-color: var(--color-ghostwhite);
+    border: 2px solid var(--color-black);
+    overflow: hidden;
+    flex-shrink: 0;
+    align-items: flex-start;
+  }
+  .dividerChild,
+  .filtersCard,
+  .leftSide {
+    align-self: stretch;
+    box-sizing: border-box;
+  }
+  .leftSide {
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-8xs) var(--padding-3xs) var(--padding-8xs)
+      var(--padding-8xs);
+  }
+  .dividerChild {
+    width: 2px;
+    position: relative;
+    border-right: 2px solid var(--color-black);
+  }
+  .divider {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs) var(--padding-5xs) var(--padding-3xs)
+      var(--padding-3xs);
+  }
+  .listTitle {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .header1 {
+    align-self: stretch;
+    background-color: var(--color-indianred-100);
+    border-bottom: 2px solid var(--color-black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-mini) 482px var(--padding-xs);
+  }
+  .semester2 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 75px;
+  }
+  .id {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-66xl);
+  }
+  .dividerBorder {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .course {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 57px;
+  }
+  .timestamp {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-75xl);
+  }
+  .dividerItem {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .enrollments {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 92px;
+  }
+  .category {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-57xl);
+  }
+  .dividerInner {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .averageGrade {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .accountType {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 65px;
+  }
+  .bodylist,
+  .header2 {
+    align-self: stretch;
+    display: flex;
+  }
+  .header2 {
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .bodylist {
+    height: 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .fall2024 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-67xl);
+  }
+  .lineDiv {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .abc1111 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .timestamp1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 88px;
+  }
+  .dividerChild1 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 33px;
+  }
+  .category1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-87xl);
+  }
+  .dividerChild2 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider6 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div1 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 26px;
+  }
+  .accountType1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-90xl);
+  }
+  .bodylist1,
+  .header3 {
+    align-self: stretch;
+    display: flex;
+  }
+  .header3 {
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .bodylist1 {
+    height: 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .fall20241 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-67xl);
+  }
+  .dividerChild3 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider7 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .cop2345 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 81px;
+  }
+  .timestamp2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 82px;
+  }
+  .dividerChild4 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div2 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 32px;
+  }
+  .category2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-87xl);
+  }
+  .dividerChild5 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider9 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div3 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 25px;
+  }
+  .accountType2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-91xl);
+  }
+  .bodylist2,
+  .header4 {
+    align-self: stretch;
+    display: flex;
+  }
+  .header4 {
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .bodylist2 {
+    height: 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .fall20242 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-67xl);
+  }
+  .dividerChild6 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider10 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .cda5652 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .timestamp3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 83px;
+  }
+  .dividerChild7 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider11 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div4 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 32px;
+  }
+  .category3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-87xl);
+  }
+  .dividerChild8 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider12 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div5 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 26px;
+  }
+  .accountType3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-90xl);
+  }
+  .bodylist3,
+  .header5 {
+    align-self: stretch;
+    display: flex;
+  }
+  .header5 {
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .bodylist3 {
+    height: 36px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .fall20243 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 72px;
+  }
+  .id4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-67xl);
+  }
+  .dividerChild9 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider13 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .mat3434 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 82px;
+  }
+  .timestamp4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 81px;
+  }
+  .dividerChild10 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider14 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div6 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .category4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 108px;
+  }
+  .dividerChild11 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider15 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div7 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 26px;
+  }
+  .accountType4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-90xl);
+  }
+  .body1,
+  .bodylist4,
+  .header6 {
+    align-self: stretch;
+    display: flex;
+  }
+  .header6 {
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .body1,
+  .bodylist4 {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .bodylist4 {
+    height: 36px;
+  }
+  .body1 {
+    flex: 1;
+    padding: var(--padding-mini);
+    gap: var(--gap-3xs);
+  }
+  .next,
+  .previous {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 87px;
+  }
+  .next {
+    min-width: 57px;
+  }
+  .footer {
+    align-self: stretch;
+    border-top: 2px solid var(--color-black);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-xs) var(--padding-mini) var(--padding-mini);
+    gap: var(--gap-xl);
+    text-align: left;
+  }
+  .coursesCard,
+  .pageBody,
+  .rightSide {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .coursesCard {
+    flex: 1;
+    box-shadow: 4px 4px 0#000;
+    background-color: var(--color-ghostwhite);
+    border: 2px solid var(--color-black);
+    overflow: hidden;
+    flex-direction: column;
+  }
+  .pageBody,
+  .rightSide {
+    box-sizing: border-box;
+    max-width: 100%;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  .rightSide {
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-8xs) var(--padding-3xs) var(--padding-3xs)
+      var(--padding-8xs);
+  }
+  .pageBody {
+    height: 948px;
+    flex-direction: row;
+    padding: var(--padding-11xl);
+  }
+  .systemAdminEnrollmentReport {
+    width: 100%;
+    height: 1024px;
+    position: relative;
+    background-color: var(--color-dodgerblue);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 1125px) {
+    .header1 {
+      padding-left: var(--padding-101xl);
+      padding-right: var(--padding-101xl);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .header1 {
+      padding-left: var(--padding-222xl);
+      padding-right: var(--padding-222xl);
+      box-sizing: border-box;
+    }
+    .rightSide {
+      min-width: 100%;
+    }
+    .pageBody {
+      padding-top: var(--padding-xl);
+      padding-bottom: var(--padding-xl);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .header,
+    .header1 {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .footer {
+      flex-wrap: wrap;
+    }
+  }
+  

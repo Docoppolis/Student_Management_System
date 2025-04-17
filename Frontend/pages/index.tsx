@@ -6,16 +6,32 @@ const StudentLogin:FunctionComponent = () => {
 
 	const router = useRouter();
   	
+	enum UserRole {
+		INVALID = -1,
+		STUDENT = 0,
+		INSTRUCTOR = 1,
+		ADVISOR = 2,
+		STAFF = 3,
+		ADMIN = 4
+	}
+
 	const getHomePage = (userType: number) =>
 	{
 		switch (userType)
 		{
-			case 0:
-				return "StudentSchedule";
-			case 1:
-				return "putotherusertypes in here and below";
+			case UserRole.STUDENT:
+				return "/Students/Schedule";
+			case UserRole.INSTRUCTOR:
+				return "/Instructors/CurrentCoursesView";
+			case UserRole.ADVISOR:
+				return "/Advisors/SearchCoursesView";
+			case UserRole.STAFF:
+				return "/Staff/DepartmentView";
+			case UserRole.ADMIN:
+				return "/Admin/DataLogView";
+			default:
+				return "";
 		}
-		return "";
 	}
 
 	const onPageload = useEffect(() => {
@@ -26,15 +42,15 @@ const StudentLogin:FunctionComponent = () => {
 			if (cookies.length != 2)
 			{
 				document.cookie = "auth=; Max-Age=0; path=/";
-				document.cookie = "email=; Max-Age=0; path=/";
+				document.cookie = "id=; Max-Age=0; path=/";
 				return;
 			}
-			const response = await fetch('http://38.45.71.234:8080/user/validate', {
+			const response = await fetch('http://localhost:8080/user/validate', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
-				body: JSON.stringify({ "auth": cookies[0].substring(5), "email":cookies[1].substring(7)})
+				body: JSON.stringify({ "auth": cookies[0].substring(5), "id":cookies[1].substring(4)})
 			});
 			const result = await response.json();
 			if (result.status === "success")
@@ -48,7 +64,7 @@ const StudentLogin:FunctionComponent = () => {
 		var passwordElement = document.getElementById('password') as HTMLInputElement;
 		var email = emailElement.value;
 		var password = passwordElement.value;
-		const response = await fetch('http://38.45.71.234:8080/user/login', {
+		const response = await fetch('http://localhost:8080/user/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -61,8 +77,8 @@ const StudentLogin:FunctionComponent = () => {
 			var curTime = new Date();
 			curTime.setDate(curTime.getDate() + 7);
 			document.cookie = "auth=" + result.auth + ";" + "expires=" + curTime.toUTCString() + ";path=/";
-			document.cookie = "email=" + email + ";" + "expires=" + curTime.toUTCString() + ";path=/";
-			router.push('/StudentSchedule');
+			document.cookie = "id=" + result.id + ";" + "expires=" + curTime.toUTCString() + ";path=/";
+			router.push(getHomePage(result.usertype))
 		}
 		else
 			alert("Invalid login!");
@@ -93,7 +109,7 @@ const StudentLogin:FunctionComponent = () => {
 						</div>
 						<input type="password" id="password" name="password" onKeyDown = {handlekeyDown} className={styles.input}/>
         				</div>
-        				<div className={styles.loginButton} onClick={onLoginButtonContainerClick}>
+        				<div className={`${styles.loginButton} ${styles.pushDown}`} onClick={onLoginButtonContainerClick}>
           					<div className={styles.login}>Login</div>
         				</div>
       			</div>

@@ -1,0 +1,10 @@
+{
+  "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/Staff/DepartmentView": "pages/Staff/DepartmentView.js",
+  "/Staff/SearchInstructors": "pages/Staff/SearchInstructors.js",
+  "/Staff/StudentsView": "pages/Staff/StudentsView.js",
+  "/Staff/AdvisorView": "pages/Staff/AdvisorView.js"
+}

@@ -33,6 +33,9 @@
   	justify-content: flex-start;
 }
 .tab {
+	position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 1000; /* Ensures it stays on top of other elements */
   	align-self: stretch;
   	background-color: #f7f7ff;
   	border-bottom: 2px solid #000;
@@ -82,6 +85,17 @@
   	align-items: center;
   	justify-content: center;
   	padding: 9px 10px;
+	transition: transform 0.1s ease, box-shadow 0.1s ease;
+	cursor: pointer; /* Adds a pointer cursor for clickable effect */
+}
+
+.button6:active {
+	transform: translateY(2px); /* Moves the button down by 2px */
+	box-shadow: 2px 2px 0px #000; /* Reduces the shadow to show pressed effect */
+}
+
+.button6:hover {
+	background-color: #d9455f; /* Slightly darker color on hover */
 }
 .body {
   	display: flex;
@@ -175,28 +189,18 @@
   	justify-content: space-between;
   	padding: 5px 10px;
 }
+
 .icon {
-  	width: 19px;
-  	position: relative;
-  	height: 19px;
-}
-.edit {
-  	width: 32px;
-  	box-shadow: 4px 4px 0px #000;
-  	background-color: #ea526f;
-  	border: 2px solid #000;
-  	box-sizing: border-box;
-  	height: 32px;
-  	display: flex;
-  	flex-direction: row;
-  	align-items: center;
-  	justify-content: center;
-  	padding: 6px;
+	width: 36px;
+	position: relative;
+	height: 36px;
+	overflow: hidden;
+	flex-shrink: 0;
 }
 .minusIcon {
-  	width: 32px;
+  	width: 36px;
   	position: relative;
-  	height: 32px;
+  	height: 36px;
   	overflow: hidden;
   	flex-shrink: 0;
 }
@@ -210,21 +214,21 @@
   	gap: 10px;
 }
 .bodylist {
-  	align-self: stretch;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: flex-start;
-  	justify-content: flex-start;
-  	gap: 10px;
+	align-self: stretch;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	gap: 10px;
 }
 .body1 {
-  	align-self: stretch;
-  	flex: 1;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: flex-start;
-  	justify-content: flex-start;
-  	padding: 5px 0px;
+	align-self: stretch;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 5px 0px;
 }
 .footer {
   	align-self: stretch;
@@ -259,27 +263,34 @@
   	padding: 5px 10px 10px 5px;
 }
 .pageBody {
-  	align-self: stretch;
-  	flex: 1;
-  	display: flex;
-  	flex-direction: row;
-  	align-items: flex-start;
-  	justify-content: flex-start;
-  	padding: 30px;
+	align-self: stretch;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	justify-content: flex-start;
+	padding: 30px;
 }
 .staffInstructorView {
-  	width: 100%;
-  	position: relative;
-  	background-color: #7692ff;
-  	height: 1024px;
-  	overflow: hidden;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	justify-content: flex-start;
-  	text-align: center;
-  	font-size: 16px;
-  	color: #000;
-  	font-family: Inter;
+	width: 100%;
+    position: relative;
+    background-color: #7692ff;
+    min-height: 100vh;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
 }
 
+.pushDown {
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+  
+  .pushDown:active {
+    transform: translateY(2px); /* Pushes the image down by 4 pixels */
+}

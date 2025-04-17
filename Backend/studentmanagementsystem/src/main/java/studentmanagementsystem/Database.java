@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import jakarta.inject.Singleton;
+
+@Singleton
 public class Database
 {
 	public Connection conn;
@@ -21,4 +24,9 @@ public class Database
 			e.printStackTrace();
 		}
 	}
+
+	public Connection getConnection() {
+		return conn;
+	}
+
 }

@@ -34,6 +34,9 @@
   	justify-content: flex-start;
 }
 .tab {
+	position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 1000; /* Ensures it stays on top of other elements */
   	align-self: stretch;
   	background-color: #f7f7ff;
   	border-bottom: 2px solid #000;
@@ -51,9 +54,11 @@
   	flex-direction: row;
   	align-items: center;
   	justify-content: center;
-  	padding: 10px 15px;
+  	padding: 13.2px 15px;
 }
 .textBox {
+	width: 110px;
+	height: 13px;
   	box-shadow: 4px 4px 0px #000;
   	background-color: #f7f7ff;
   	border: 2px solid #000;
@@ -61,16 +66,31 @@
   	display: flex;
   	flex-direction: row;
   	align-items: center;
+	text-align: center;
   	justify-content: center;
   	padding: 5px 10px;
 }
+.textBoxInput {
+    width: 100%; /* Full width to fill .inputBox */
+    height: 100%; /* Full height to fill .inputBox */
+    border: none; /* Remove border on the input */
+    outline: none; /* Remove focus outline */
+    text-align: center; /* Center the text in the input */
+    background-color: transparent; /* Match background to .inputBox */
+    font-size: inherit; /* Inherit font-size from .inputBox */
+    font-weight: inherit; /* Inherit font-weight from .inputBox */
+    padding: 0; /* Remove any padding for exact fit */
+    margin: 0; /* Remove margin to avoid spacing issues */
+    box-sizing: border-box; /* Ensures width/height include padding/border */
+}
 .checkIcon {
-  	width: 24px;
+  	width: 32px;
   	position: relative;
-  	height: 24px;
+  	height: 32px;
   	overflow: hidden;
   	flex-shrink: 0;
 }
+
 .body {
   	height: 60px;
   	display: flex;
@@ -102,13 +122,14 @@
   	gap: 10px;
 }
 .textBox2 {
-  	width: 69px;
+  	width: 75px;
   	position: relative;
   	box-shadow: 4px 4px 0px #000;
   	background-color: #f7f7ff;
   	border: 2px solid #000;
   	box-sizing: border-box;
   	height: 26px;
+	text-align: center;
   	overflow: hidden;
   	flex-shrink: 0;
 }
@@ -143,6 +164,7 @@
   	align-items: flex-start;
   	justify-content: flex-start;
 }
+
 .columns {
   	display: flex;
   	flex-direction: row;
@@ -227,18 +249,36 @@
   	max-height: 1024px;
 }
 .staffSearchInstructors {
-  	width: 100%;
-  	position: relative;
-  	background-color: #7692ff;
-  	height: 1024px;
-  	overflow: hidden;
-  	display: flex;
-  	flex-direction: column;
-  	align-items: center;
-  	justify-content: flex-start;
-  	text-align: center;
-  	font-size: 16px;
-  	color: #000;
-  	font-family: Inter;
+	width: 100%;
+    position: relative;
+    background-color: #7692ff;
+    min-height: 100vh;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
 }
 
+.pushDown {
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+  
+  .pushDown:active {
+    transform: translateY(2px); /* Pushes the image down by 4 pixels */
+}
+
+.pushDown {
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+  
+  .pushDown:active {
+    transform: translateY(2px); /* Pushes the image down by 4 pixels */
+}
+  

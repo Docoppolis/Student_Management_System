@@ -93,7 +93,7 @@
   	width: 100%;
   	position: relative;
   	background-color: #7692ff;
-  	height: 1024px;
+  	min-height: 100vp;
   	overflow: hidden;
   	display: flex;
   	flex-direction: column;
@@ -107,3 +107,12 @@
   	font-family: Inter;
 }
 
+.pushDown {
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+  
+  .pushDown:active {
+    transform: translateY(2px); /* Pushes the image down by 4 pixels */
+}
+  

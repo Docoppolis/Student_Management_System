@@ -1,8 +1,12 @@
+/* General Text Styling */
 .text {
     position: relative;
     line-height: 100%;
     font-weight: 500;
+    color: #000;
 }
+
+/* Button Styles */
 .button {
     display: flex;
     flex-direction: row;
@@ -10,7 +14,10 @@
     justify-content: center;
     padding: 30px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+
 .buttonChild {
     align-self: stretch;
     position: relative;
@@ -18,6 +25,7 @@
     box-sizing: border-box;
     height: 1px;
 }
+
 .button1 {
     display: flex;
     flex-direction: column;
@@ -26,16 +34,19 @@
     padding: 30px 30px 20px;
     gap: 10px;
 }
+
+/* Tabs and Layout */
 .left {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 }
+
 .tab {
     position: sticky;
-    top: 0; /* Sticks to the top of the viewport */
-    z-index: 1000; /* Ensures it stays on top of other elements */
+    top: 0;
+    z-index: 1000;
     align-self: stretch;
     background-color: #f7f7ff;
     border-bottom: 2px solid #000;
@@ -44,7 +55,10 @@
     align-items: flex-start;
     justify-content: space-between;
     padding: 0px 15px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+/* Header Section */
 .header {
     align-self: stretch;
     background-color: #ea526f;
@@ -53,118 +67,55 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 15px 0px;
+    padding: 15px 0;
     gap: 30px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
 }
-.abbreviation {
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 5px 0px;
-}
-.dividerChild {
-    align-self: stretch;
-    width: 1px;
-    position: relative;
-    border-right: 1px solid #000;
-    box-sizing: border-box;
-}
-.divider {
-    align-self: stretch;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-}
-.term1 {
-    width: 50px;
-    position: relative;
-    line-height: 100%;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-}
-.entry {
-    align-self: stretch;
-    background-color: #f7f7ff;
-    border: 1px solid #000;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px 10px;
-}
-.bodylist {
-    flex: 1;
+
+/* Ensure the main container has height */
+.body {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    gap: 5px;
+    padding: 30px;
+    box-sizing: border-box;
+    height: 100%; /* Add this */
 }
-.scrollBarChild {
-    align-self: stretch;
-    width: 0px;
-    position: relative;
-    max-height: 100%;
-    object-fit: contain;
-}
-.scrollBar {
-    align-self: stretch;
-    border: 1px solid #000;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    padding: 3px 3px 123px;
-}
-.body1 {
-    align-self: stretch;
-    flex: 1;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 10px 15px;
-    gap: 10px;
-}
+/* Propagate height upwards */
 .coursesCard {
-    align-self: stretch;
     flex: 1;
-    box-shadow: 4px 4px 0px #000;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     background-color: #f7f7ff;
     border: 2px solid #000;
+    box-shadow: 4px 4px 0px #000;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    height: 100%; /* Add this */
 }
-.body {
-    align-self: stretch;
+
+.body1 {
     flex: 1;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    padding: 30px;
+    height: 100%; /* Add this */
 }
+
+
 .studentDegreeprogressView {
     width: 100%;
-    position: relative;
-    background-color: #7692ff;
-    height: 1024px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     gap: 10px;
+    background-color: #7692ff;
     text-align: center;
     font-size: 16px;
-    color: #000;
-    font-family: Inter;
+    font-family: Inter, sans-serif;
+    height: 100%; /* Add this if needed */
 }

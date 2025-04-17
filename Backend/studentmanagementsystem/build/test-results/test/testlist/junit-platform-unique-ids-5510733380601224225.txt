@@ -1,0 +1,1 @@
+[engine:junit-jupiter]/[class:studentmanagementsystem.StudentmanagementsystemTest]/[method:testItWorks()]

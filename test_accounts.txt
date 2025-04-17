@@ -1,0 +1,19 @@
+Admin:
+john.smith@admin.com
+thepassword
+
+Staff (Dep 4):
+jane.doe@staff.com
+thepassword
+
+Instructor:
+john.doe@uni.edu
+thepassword
+
+Advisor:
+john.frog@gmail.com
+thepassword
+
+Student:
+james.man@mail.com
+thepassword

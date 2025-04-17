@@ -1,0 +1,42 @@
+/*Style for entire page of all pages (first div in all pages)*/
+.page {
+    width: 100%;
+    position: relative;
+    background-color: #7692ff;
+    min-height: 100vh;
+    /*overflow: hidden;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    font-size: 16px;
+    color: #000;
+    font-family: Inter;
+}
+
+/*Style for the tab at top of all pages*/
+.tab {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    align-self: stretch;
+    background-color: #f7f7ff;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+
+/*Style for body of page below tab of all pages*/
+.body {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+}

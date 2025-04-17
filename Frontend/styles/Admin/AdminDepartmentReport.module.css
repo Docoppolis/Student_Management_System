@@ -1,0 +1,403 @@
+.dividerChild {
+    align-self: stretch;
+    width: 2px;
+    position: relative;
+    border-right: 2px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs) var(--padding-5xs) var(--padding-3xs)
+      var(--padding-3xs);
+  }
+  .navigationLabels {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .header {
+    align-self: stretch;
+    background-color: var(--color-indianred-100);
+    border-bottom: 2px solid var(--color-black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-mini) 450px var(--padding-xs);
+  }
+  .department {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 198px;
+  }
+  .dividerItem {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .dividerInner {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .lineDiv {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .averageGpa {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 101px;
+  }
+  .accountType,
+  .header1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 194px;
+  }
+  .header1 {
+    align-self: stretch;
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    overflow-x: auto;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .cse {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id1,
+  .idWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .id1 {
+    flex: 1;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-209xl);
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .idWrapper {
+    justify-content: flex-start;
+    max-width: calc(100% - 490px);
+  }
+  .dividerChild1 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 26px;
+  }
+  .accountType1,
+  .log {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-213xl);
+  }
+  .log {
+    align-self: stretch;
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    overflow-x: auto;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    max-width: 100%;
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .cee {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 33px;
+  }
+  .id2,
+  .idContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .id2 {
+    flex: 1;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-209xl);
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .idContainer {
+    justify-content: flex-start;
+    max-width: calc(100% - 490px);
+  }
+  .dividerChild2 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider5 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .div1 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 26px;
+  }
+  .accountType2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-213xl);
+  }
+  .body,
+  .bodylist,
+  .log1 {
+    align-self: stretch;
+    display: flex;
+    max-width: 100%;
+  }
+  .log1 {
+    flex: 1;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-4xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .body,
+  .bodylist {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .bodylist {
+    height: 128px;
+    gap: var(--gap-3xs);
+  }
+  .body {
+    flex: 1;
+    padding: var(--padding-mini);
+    box-sizing: border-box;
+  }
+  .next,
+  .previous {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 87px;
+  }
+  .next {
+    min-width: 57px;
+  }
+  .footer {
+    align-self: stretch;
+    border-top: 2px solid var(--color-black);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-xs) var(--padding-mini) var(--padding-mini);
+    gap: var(--gap-xl);
+    text-align: left;
+  }
+  .coursesCard {
+    flex: 1;
+    box-shadow: 4px 4px 0#000;
+    background-color: var(--color-ghostwhite);
+    border: 2px solid var(--color-black);
+    overflow: hidden;
+    flex-direction: column;
+  }
+  .coursesCard,
+  .pageBody,
+  .rightSide {
+    align-self: stretch;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .rightSide {
+    flex: 1;
+    flex-direction: column;
+    padding: var(--padding-8xs) var(--padding-3xs) var(--padding-3xs)
+      var(--padding-8xs);
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  .pageBody {
+    height: 948px;
+    flex-direction: row;
+    padding: var(--padding-11xl);
+  }
+  .systemAdminDepartmentReport {
+    width: 100%;
+    height: 1024px;
+    position: relative;
+    background-color: var(--color-dodgerblue);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 1125px) {
+    .header {
+      padding-left: var(--padding-93xl);
+      padding-right: var(--padding-93xl);
+      box-sizing: border-box;
+    }
+    .accountType,
+    .id,
+    .id1 {
+      padding-left: var(--padding-80xl);
+      padding-right: var(--padding-80xl);
+      box-sizing: border-box;
+    }
+    .accountType,
+    .id1 {
+      padding-left: var(--padding-78xl);
+      padding-right: var(--padding-78xl);
+    }
+    .id1 {
+      padding-left: var(--padding-95xl);
+      padding-right: var(--padding-95xl);
+    }
+    .accountType1,
+    .accountType2,
+    .id2 {
+      padding-left: var(--padding-97xl);
+      padding-right: var(--padding-97xl);
+      box-sizing: border-box;
+    }
+    .accountType2,
+    .id2 {
+      padding-left: var(--padding-95xl);
+      padding-right: var(--padding-95xl);
+    }
+    .accountType2 {
+      padding-left: var(--padding-97xl);
+      padding-right: var(--padding-97xl);
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .header {
+      padding-left: var(--padding-206xl);
+      padding-right: var(--padding-206xl);
+      box-sizing: border-box;
+    }
+    .rightSide {
+      min-width: 100%;
+    }
+    .pageBody {
+      padding-top: var(--padding-xl);
+      padding-bottom: var(--padding-xl);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .header {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .footer {
+      flex-wrap: wrap;
+    }
+  }
+  

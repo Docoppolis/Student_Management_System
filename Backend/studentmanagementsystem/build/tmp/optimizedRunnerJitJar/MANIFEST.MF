@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Main-Class: studentmanagementsystem.Application
+Class-Path: libs/postgresql-jdbc.jar libs/micronaut-serde-jackson-2.11.0
+ .jar libs/argon2-jvm-2.11.jar libs/micronaut-serde-support-2.11.0.jar l
+ ibs/micronaut-serde-api-2.11.0.jar libs/micronaut-http-server-netty-4.6
+ .5.jar libs/micronaut-http-server-4.6.5.jar libs/micronaut-http-netty-4
+ .6.5.jar libs/micronaut-router-4.6.5.jar libs/micronaut-jackson-core-4.
+ 6.5.jar libs/micronaut-json-core-4.6.5.jar libs/micronaut-http-4.6.5.ja
+ r libs/micronaut-context-propagation-4.6.5.jar libs/micronaut-context-4
+ .6.5.jar libs/micronaut-buffer-netty-4.6.5.jar libs/micronaut-aop-4.6.5
+ .jar libs/micronaut-inject-4.6.5.jar libs/logback-classic-1.5.7.jar lib
+ s/argon2-jvm-nolibs-2.11.jar libs/jna-5.14.0.jar libs/jackson-annotatio
+ ns-2.17.2.jar libs/jackson-core-2.17.2.jar libs/jakarta.annotation-api-
+ 2.1.1.jar libs/netty-codec-http2-4.1.113.Final.jar libs/netty-codec-htt
+ p-4.1.113.Final.jar libs/netty-handler-4.1.113.Final.jar libs/netty-cod
+ ec-4.1.113.Final.jar libs/netty-transport-native-unix-common-4.1.113.Fi
+ nal.jar libs/netty-transport-4.1.113.Final.jar libs/netty-buffer-4.1.11
+ 3.Final.jar libs/netty-resolver-4.1.113.Final.jar libs/netty-common-4.1
+ .113.Final.jar libs/reactor-core-3.6.9.jar libs/micronaut-core-reactive
+ -4.6.5.jar libs/reactive-streams-1.0.4.jar libs/micronaut-core-4.6.5.ja
+ r libs/logback-core-1.5.7.jar libs/slf4j-api-2.0.16.jar libs/jakarta.in
+ ject-api-2.0.1.jar resources/ classes/
+

@@ -1,0 +1,749 @@
+.filters {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 49px;
+  }
+  .header,
+  .major {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .header {
+    align-self: stretch;
+    background-color: var(--color-indianred-100);
+    border-bottom: 2px solid var(--color-black);
+    flex-direction: row;
+    padding: var(--padding-mini) var(--padding-106xl) var(--padding-xs);
+  }
+  .major {
+    width: 45px;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .categorySelection {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--gap-8xs);
+  }
+  .text {
+    position: relative;
+    font-size: var(--font-size-base);
+    line-height: 100%;
+    font-weight: 500;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: center;
+  }
+  .body,
+  .button {
+    align-self: stretch;
+    align-items: center;
+  }
+  .button {
+    cursor: pointer;
+    border: 2px solid var(--color-black);
+    padding: var(--padding-4xs) var(--padding-3xs);
+    background-color: var(--color-indianred-100);
+    box-shadow: 4px 4px 0#000;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .body {
+    padding: var(--padding-8xs) var(--padding-11xl) var(--padding-mini);
+    gap: var(--gap-3xs);
+    min-width: 300px;
+  }
+  .body,
+  .filtersCard,
+  .leftSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-sizing: border-box;
+  }
+  .filtersCard {
+    align-self: stretch;
+    height: 165px;
+    box-shadow: 4px 4px 0#000;
+    background-color: var(--color-ghostwhite);
+    border: 2px solid var(--color-black);
+    overflow: hidden;
+    flex-shrink: 0;
+    align-items: flex-start;
+  }
+  .leftSide {
+    height: 888px;
+    width: 315px;
+    align-items: center;
+    padding: var(--padding-8xs) var(--padding-3xs) var(--padding-8xs)
+      var(--padding-8xs);
+  }
+  .dividerChild {
+    align-self: stretch;
+    width: 2px;
+    position: relative;
+    border-right: 2px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider {
+    height: 888px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-3xs) var(--padding-5xs) var(--padding-3xs)
+      var(--padding-3xs);
+    box-sizing: border-box;
+  }
+  .previous {
+    flex: 1;
+    position: relative;
+    font-size: var(--font-size-base);
+    line-height: 100%;
+    font-weight: 500;
+    font-family: var(--font-inter);
+    color: var(--color-black);
+    text-align: center;
+  }
+  .header1 {
+    cursor: pointer;
+    border: 0;
+    padding: var(--padding-mini) 410px var(--padding-xs);
+    background-color: var(--color-indianred-100);
+    align-self: stretch;
+    border-bottom: 2px solid var(--color-black);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .header1:hover {
+    background-color: var(--color-indianred-200);
+  }
+  .major1 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 45px;
+  }
+  .id {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 141px;
+  }
+  .studentNames {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+  }
+  .student {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 132px;
+  }
+  .accountDivider {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
+  .dividerItem {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
+  .dividerInner {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
+  .creditsTaken {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 107px;
+  }
+  .accountType,
+  .header2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .accountType {
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-91xl);
+    z-index: 1;
+  }
+  .header2 {
+    align-self: stretch;
+    height: 36px;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    overflow-x: auto;
+    flex-shrink: 0;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-3xs);
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .math {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 41px;
+  }
+  .id2,
+  .lineDiv {
+    box-sizing: border-box;
+  }
+  .id2 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-124xl);
+    min-width: 41px;
+    max-width: 100%;
+  }
+  .lineDiv {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+  }
+  .divider5,
+  .idParent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .divider5 {
+    padding: 0;
+  }
+  .idParent {
+    max-width: calc(100% - 653px);
+    row-gap: 20px;
+  }
+  .mathMaster {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .id3,
+  .idWrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .id3 {
+    flex: 1;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-95xl);
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .idWrapper {
+    justify-content: flex-start;
+    max-width: calc(100% - 653px);
+  }
+  .dividerChild1 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider6 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
+  .div {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .accountType1,
+  .log {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .accountType1 {
+    justify-content: center;
+    padding: var(--padding-8xs) 149px;
+    z-index: 1;
+  }
+  .log {
+    align-self: stretch;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    overflow-x: auto;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-3xs);
+    min-height: 36px;
+    max-width: 100%;
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .math1 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 41px;
+  }
+  .dividerChild2,
+  .id4 {
+    box-sizing: border-box;
+  }
+  .id4 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-124xl);
+    min-width: 41px;
+    max-width: 100%;
+  }
+  .dividerChild2 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+  }
+  .divider7,
+  .idGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .divider7 {
+    padding: 0;
+  }
+  .idGroup {
+    max-width: calc(100% - 653px);
+    row-gap: 20px;
+  }
+  .jamesMan {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 89px;
+  }
+  .id5,
+  .idContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .id5 {
+    justify-content: center;
+    padding: var(--padding-8xs) 119px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .idContainer {
+    justify-content: flex-start;
+    max-width: calc(100% - 653px);
+  }
+  .dividerChild3 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider8 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
+  .div1 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 22px;
+  }
+  .accountType2,
+  .log1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .accountType2 {
+    justify-content: center;
+    padding: var(--padding-8xs) 152px;
+    z-index: 1;
+  }
+  .log1 {
+    align-self: stretch;
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    overflow-x: auto;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-3xs);
+    min-height: 36px;
+    max-width: 100%;
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .math2 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 41px;
+  }
+  .dividerChild4,
+  .id6 {
+    box-sizing: border-box;
+  }
+  .id6 {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-124xl);
+    min-width: 41px;
+    max-width: 100%;
+  }
+  .dividerChild4 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+  }
+  .divider9,
+  .frameDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .divider9 {
+    padding: 0;
+  }
+  .frameDiv {
+    max-width: calc(100% - 653px);
+    row-gap: 20px;
+  }
+  .benjaminJohn {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 114px;
+  }
+  .id7,
+  .idFrame {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .id7 {
+    flex: 1;
+    justify-content: center;
+    padding: var(--padding-8xs) var(--padding-87xl);
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .idFrame {
+    justify-content: flex-start;
+    max-width: calc(100% - 653px);
+  }
+  .dividerChild5 {
+    height: 27px;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid var(--color-black);
+    box-sizing: border-box;
+  }
+  .divider10 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0;
+    z-index: 1;
+  }
+  .div2 {
+    flex: 1;
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+  }
+  .accountType3 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-8xs) 153px;
+    z-index: 1;
+  }
+  .body1,
+  .bodylist,
+  .log2 {
+    align-self: stretch;
+    display: flex;
+    max-width: 100%;
+  }
+  .log2 {
+    background-color: var(--color-ghostwhite);
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    overflow-x: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-10xs) var(--padding-3xs);
+    min-height: 36px;
+    gap: var(--gap-0);
+    row-gap: 20px;
+  }
+  .body1,
+  .bodylist {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .bodylist {
+    gap: var(--gap-3xs);
+  }
+  .body1 {
+    padding: var(--padding-mini) var(--padding-mini) 592px;
+    box-sizing: border-box;
+  }
+  .next,
+  .previous1 {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+    display: inline-block;
+    min-width: 87px;
+  }
+  .next {
+    min-width: 57px;
+  }
+  .footer {
+    align-self: stretch;
+    border-top: 2px solid var(--color-black);
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--padding-xs) var(--padding-mini) var(--padding-mini);
+    gap: var(--gap-xl);
+    text-align: left;
+  }
+  .coursesCard,
+  .rightSide {
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .coursesCard {
+    align-self: stretch;
+    box-shadow: 4px 4px 0#000;
+    background-color: var(--color-ghostwhite);
+    border: 2px solid var(--color-black);
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .rightSide {
+    flex: 1;
+    padding: var(--padding-8xs) var(--padding-3xs) var(--padding-3xs)
+      var(--padding-8xs);
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  .pageBody,
+  .rightSide,
+  .systemAdminMajorReportView {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .pageBody {
+    align-self: stretch;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: var(--padding-11xl);
+    box-sizing: border-box;
+    max-width: 100%;
+    text-align: center;
+    font-size: var(--font-size-base);
+    color: var(--color-black);
+    font-family: var(--font-inter);
+  }
+  .systemAdminMajorReportView {
+    width: 100%;
+    position: relative;
+    background-color: var(--color-dodgerblue);
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  @media screen and (max-width: 1125px) {
+    .divider {
+      display: none;
+    }
+    .pageBody {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 1050px) {
+    .body1 {
+      padding-top: var(--padding-xl);
+      padding-bottom: 385px;
+      box-sizing: border-box;
+    }
+    .rightSide {
+      min-width: 100%;
+    }
+    .pageBody {
+      padding-top: var(--padding-xl);
+      padding-bottom: var(--padding-xl);
+      box-sizing: border-box;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .accountType,
+    .header,
+    .header1,
+    .id,
+    .id1,
+    .id2 {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .idParent {
+      flex-wrap: wrap;
+    }
+    .accountType1,
+    .id3,
+    .id4 {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .idGroup {
+      flex-wrap: wrap;
+    }
+    .accountType2,
+    .id5,
+    .id6 {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .frameDiv {
+      flex-wrap: wrap;
+    }
+    .accountType3,
+    .id7 {
+      padding-left: var(--padding-xl);
+      padding-right: var(--padding-xl);
+      box-sizing: border-box;
+    }
+    .body1 {
+      padding-bottom: 250px;
+      box-sizing: border-box;
+    }
+    .footer {
+      flex-wrap: wrap;
+    }
+  }
+  

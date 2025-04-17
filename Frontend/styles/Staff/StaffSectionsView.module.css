@@ -1,0 +1,290 @@
+.text {
+    position: relative;
+    line-height: 100%;
+    font-weight: 500;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    cursor: pointer;
+}
+.buttonChild {
+    align-self: stretch;
+    position: relative;
+    border-top: 1px solid #000;
+    box-sizing: border-box;
+    height: 1px;
+}
+.button1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 30px 20px;
+    gap: 10px;
+}
+.left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.tab {
+  position: sticky;
+  top: 0; /* Sticks to the top of the viewport */
+  z-index: 1000; /* Ensures it stays on top of other elements */
+    align-self: stretch;
+    background-color: #f7f7ff;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0px 15px;
+}
+.dropdown {
+    width: 240px;
+    box-shadow: 4px 4px 0px #000;
+    background-color: #ececec;
+    border: 2px solid #000;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.header {
+    align-self: stretch;
+    background-color: #ea526f;
+    border-bottom: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0px;
+}
+.typeCoursePrefixWrapper {
+    align-self: stretch;
+    box-shadow: 4px 4px 0px #000;
+    background-color: #ececec;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 9px 10px;
+}
+.coursePrefix {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 5px;
+}
+.button6 {
+    align-self: stretch;
+    box-shadow: 4px 4px 0px #000;
+    background-color: #ea526f;
+    border: 2px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 10px;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  cursor: pointer; /* Adds a pointer cursor for clickable effect */
+}
+
+.button6:active {
+  transform: translateY(2px); /* Moves the button down by 2px */
+  box-shadow: 2px 2px 0px #000; /* Reduces the shadow to show pressed effect */
+}
+
+.button6:hover {
+  background-color: #d9455f; /* Slightly darker color on hover */
+}
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 30px 15px;
+    box-sizing: border-box;
+    gap: 10px;
+    min-width: 300px;
+}
+.filtersCard {
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.leftSide {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 10px 10px 5px;
+}
+.dividerChild {
+    align-self: stretch;
+    width: 2px;
+    position: relative;
+    border-right: 2px solid #000;
+    box-sizing: border-box;
+}
+.divider {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0px;
+}
+.dividerItem {
+    align-self: stretch;
+    width: 1px;
+    position: relative;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+}
+.divider1 {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.edu1004 {
+    flex: 1;
+    background-color: #f7f7ff;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+}
+
+.icon {
+  width: 36px;
+  position: relative;
+  height: 36px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.minusIcon {
+    width: 36px;
+    position: relative;
+    height: 36px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.course {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0px 10px;
+    gap: 10px;
+}
+.bodylist {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.body1 {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 5px 0px;
+}
+.footer {
+    align-self: stretch;
+    border-top: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    text-align: left;
+}
+.coursesCard {
+    align-self: stretch;
+    flex: 1;
+    box-shadow: 4px 4px 0px #000;
+    background-color: #f7f7ff;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+.rightSide {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 5px 10px 10px 5px;
+}
+.pageBody {
+    align-self: stretch;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 30px;
+}
+.staffCoursesView {
+  width: 100%;
+  position: relative;
+  background-color: #7692ff;
+  min-height: 100vh;
+  /*overflow: hidden;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  font-size: 16px;
+  color: #000;
+  font-family: Inter;
+}
+
+.pushDown {
+  transition: transform 0.1s ease;
+  cursor: pointer;
+}
+
+.pushDown:active {
+  transform: translateY(2px); /* Pushes the image down by 4 pixels */
+}

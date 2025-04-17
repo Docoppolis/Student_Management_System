@@ -20,6 +20,7 @@ dependencies {
     testImplementation("io.micronaut:micronaut-http-client")
     implementation("de.mkammerer:argon2-jvm:2.11")
     implementation(files("/usr/share/java/postgresql-jdbc.jar"))
+    implementation("io.micronaut:micronaut-inject")
 }
 
 

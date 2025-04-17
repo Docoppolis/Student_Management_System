@@ -1,0 +1,3 @@
+studentmanagementsystem.DeducedEnvironmentConfigurer
+studentmanagementsystem.NettyPropertiesAOTContextConfigurer
+studentmanagementsystem.AOTApplicationContextConfigurer

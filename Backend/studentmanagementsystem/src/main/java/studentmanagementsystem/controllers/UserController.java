@@ -12,6 +12,7 @@ import io.micronaut.http.annotation.Body;
 import io.micronaut.http.annotation.Controller;
 import io.micronaut.http.annotation.Post;
 import studentmanagementsystem.Application;
+import studentmanagementsystem.UserType;
 import studentmanagementsystem.Authentication.UserRegistration;
 import studentmanagementsystem.Authentication.UserLogin;
 import studentmanagementsystem.Authentication.ValidateLogin;
@@ -37,7 +38,7 @@ public class UserController
 	public HttpResponse<String> RegisterUser(@Body UserRegistration req)
 	{
 		try {
-			PreparedStatement ps = Application.db.conn.prepareStatement("insert into users values (?, ?, null, ?)");
+			PreparedStatement ps = Application.db.conn.prepareStatement("insert into users values (?, ?, ?, ?, ?)");
 			ps.setString(1, req.getEmail());
 	    	String hash = argon2.hash(10, 65536, 1, req.getPassword().toCharArray());
 			ps.setString(2, hash);
@@ -46,6 +47,7 @@ public class UserController
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			return HttpResponse.ok("{\"status\":\"failure\"}");
 		}
 		return HttpResponse.ok(UserRegistrationReply(true));
 	}
@@ -53,36 +55,58 @@ public class UserController
 	@Post("/login")
 	public HttpResponse<String> LoginUser(@Body UserLogin req)
 	{
+		String tables[] = {"students", "instructors", "advisors", "staff", "admins"};
+		String idAttributes[] = {"studentid", "instructorid", "advisorid", "staffid", "adminid"};
+		String idLetters[] = {"U", "I", "A", "S", "D"};
 		try {
-			PreparedStatement ps = Application.db.conn.prepareStatement("select password, auth from users where email = ?");
-			ps.setString(1, req.getEmail());
-			ResultSet rs = ps.executeQuery();
-			if (rs.next() && argon2.verify(rs.getString("password"), req.getPassword()))
+			for (int i = 0; i < 5; i++)
 			{
-				return HttpResponse.ok("{\"status\": \"success\", \"auth\":\"" + rs.getString("auth") + "\"}");
+				PreparedStatement ps = Application.db.conn.prepareStatement(String.format("select passhash, token, %s from %s where email = ?", idAttributes[i], tables[i]));
+				ps.setString(1, req.getEmail());
+				ResultSet rs = ps.executeQuery();
+				if (rs.next() && argon2.verify(rs.getString("passhash"), req.getPassword()))
+				{
+					return HttpResponse.ok("{\"status\": \"success\", \"auth\":\"" + rs.getString("token") + "\", \"usertype\":" + i + ", \"id\":\"" + String.format("%s%s", idLetters[i], rs.getInt(idAttributes[i])) + "\"}");
+				}
 			}
 		} 
 		catch (SQLException e) {
 				// TODO Auto-generated catch block
 			e.printStackTrace();
+			return HttpResponse.ok("{\"status\":\"failure\"}");
 		}
 		return HttpResponse.ok("{\"status\": \"failure\", \"error\": \"invalid login\"}");
+	}
+
+	public static int ValidateUserType(String auth, String id)
+	{
+		String tables[] = {"students", "instructors", "advisors", "staff", "admins"};
+		String idAttributes[] = {"studentid", "instructorid", "advisorid", "staffid", "adminid"};
+		int usertype = UserType.UserIDToType(id);
+		int selectedTable = usertype;
+		try {
+			PreparedStatement ps = Application.db.conn.prepareStatement(String.format("select token from %s where %s = ?", tables[selectedTable], idAttributes[usertype]));
+			ps.setInt(1, Integer.parseInt(id.substring(1)));
+			ResultSet rs = ps.executeQuery();
+			//System.out.println(id + " " + String.format("select token from %s where %s = %d", tables[selectedTable], idAttributes[usertype], Integer.parseInt(id.substring(1))));
+			if (rs.next() && rs.getString("token").equals(auth))
+			{
+				return selectedTable;
+			}
+		}
+		catch (SQLException e) {
+				// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return UserType.INVALID;
 	}
 
 	@Post("/validate")
 	public HttpResponse<String> ValidateUser(@Body ValidateLogin req)
 	{
-		try {
-			PreparedStatement ps = Application.db.conn.prepareStatement("select auth, usertype from users where email = ?");
-			ps.setString(1, req.getEmail());
-			ResultSet rs = ps.executeQuery();
-			if (rs.next() && req.getAuth().equals(rs.getString("auth")))
-				return HttpResponse.ok("{\"status\": \"success\", \"usertype\":" + rs.getInt("usertype") + "}");
-		} 
-		catch (SQLException e) {
-				// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		int u = ValidateUserType(req.getAuth(), req.getId());
+		if (u != UserType.INVALID)
+			return HttpResponse.ok("{\"status\": \"success\", \"usertype\":" + u + "}");
 		return HttpResponse.ok("{\"status\": \"failure\", \"error\": \"invalid authorization\"}");
 	}
 

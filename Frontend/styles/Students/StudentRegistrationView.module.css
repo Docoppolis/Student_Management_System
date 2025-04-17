@@ -75,7 +75,7 @@
     padding: 5px 10px;
 }
 .textBox1 {
-    width: 69px;
+    width: 80px;
     position: relative;
     box-shadow: 4px 4px 0px #000;
     background-color: #f7f7ff;
@@ -197,7 +197,7 @@
     width: 100%;
     position: relative;
     background-color: #7692ff;
-    height: 1024px;
+    min-height: 100vh;
     /*overflow: hidden;*/
     display: flex;
     flex-direction: column;

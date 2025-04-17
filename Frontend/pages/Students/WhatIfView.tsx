@@ -1,12 +1,15 @@
-import { FunctionComponent, useCallback } from 'react';
+import { FunctionComponent, useCallback, useState, useEffect } from 'react';
 import styles from '../../styles/Students/StudentWhatIfView.module.css';
 import { useRouter } from 'next/router';
 import WhatIfCourseComponent from '@/components/Students/WhatIfCourseComponent';
-import ReactDOMServer, { renderToString } from 'react-dom/server';
+//import ReactDOMServer, { renderToString } from 'react-dom/server';
 
 const StudentWhatIfView:FunctionComponent = () => {
   	
-    const router = useRouter();  	
+    const router = useRouter();
+	const [numcourses, setnumcourses] = useState(4);
+	const [gpa, setgpa] = useState(3.5);
+	const [totalcredits, setcredits] = useState(80);
 
 	const onScheduleClick = useCallback(() => {
 		router.push("/Students/Schedule")
@@ -30,35 +33,83 @@ const StudentWhatIfView:FunctionComponent = () => {
 
 	const onLogoutClick = useCallback(() => {
 		document.cookie = "auth=; Max-Age=0; path=/";
-		document.cookie = "email=; Max-Age=0; path=/";
+		document.cookie = "id=; Max-Age=0; path=/";
 		router.push("/");
 	}, []);
   	
+	const gradeToGPA = (grade) => {
+		switch (grade.toUpperCase())
+		{
+			case 'A':
+				return 4.0;
+			case 'B':
+				return 3.0;
+			case 'C':
+				return 2.0;
+			case 'D':
+				return 1.0;
+			case 'F':
+				return 0.0;
+			default:
+				return 0.0;
+		}
+	}
+
+	const onGradeChange = (event) => {
+		var points = 0;
+		var credits = 0;
+		for (var i = 0; i < document.getElementById("numcourses").value; i++)
+		{
+			credits += Number(document.getElementById("course" + i + "c").value);
+			points += gradeToGPA(document.getElementById("course" + i).value) * Number(document.getElementById("course" + i + "c").value);
+		}
+		document.getElementById("hypothetical gpa").textContent = "GPA: " + ((points + (totalcredits * gpa)) / (credits + totalcredits)).toFixed(2);
+		document.getElementById("hypothetical credits").textContent = "Total Credits: " + (credits + totalcredits);
+	}
+
+	useEffect(() => {
+		const checkAuth = async () => {
+			if (document.cookie.length === 0)
+			   return;
+		   var cookies = document.cookie.split(";");
+		   if (cookies.length != 2)
+		   {
+			   document.cookie = "auth=; Max-Age=0; path=/";
+			   document.cookie = "id=; Max-Age=0; path=/";
+			   return;
+		   }
+		   const response = await fetch('http://localhost:8080/user/validate', {
+			   method: 'POST',
+			   headers: {
+				   'Content-Type': 'application/json',
+			   },
+			   body: JSON.stringify({ "auth": cookies[0].substring(5), "id":cookies[1].substring(4)})
+		   });
+		   const result = await response.json();
+		   if (result.status === "success" && result.usertype == 0)
+		   {
+				const response = await fetch('http://localhost:8080/user/student/whatif', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify({ "auth": cookies[0].substring(5), "id":cookies[1].substring(4)})
+				});
+				const result = await response.json();
+				if (result.status === "success")
+				{
+					setgpa(result.gpa);
+					setcredits(result.credits);
+				}
+		   }
+	   	}
+		checkAuth();
+		onGradeChange(null);
+	});
 
 	const buttonDown = useCallback(async () => {
-		var numcourses = document.getElementById("numcourses").value;
-		var i = 0;
-		while (document.getElementById("course" + i))
-			i++;
-		if (i == numcourses)
-			return;
-		var courselist = document.getElementById("courselist");
-		if (i > numcourses)
-		{
-			for (var j = i - 1; j > numcourses - 1; j--)
-				document.getElementById("course" + (j)).parentElement.parentElement.remove();
-			
-			return;
-		}
-		for (var j = i; j < numcourses; j++)
-		{
-			var c = <WhatIfCourseComponent name={"course" + j}/>
-			var elem = document.createElement("div");
-			elem.innerHTML = ReactDOMServer.renderToString(c);
-			courselist.appendChild(elem);
-		}
-
-  	}, []);
+		setnumcourses(document.getElementById("numcourses").value);
+	}, []);
 
   	return (
     		<div className={styles.studentWhatIfView}>
@@ -134,8 +185,8 @@ const StudentWhatIfView:FunctionComponent = () => {
               							<div className={styles.body2}>
                 								<div className={styles.infoParent}>
                   									<img className={styles.infoIcon} alt="" src="/Info.svg" />
-                  									<div className={styles.text}>GPA: 3.58</div>
-                  									<div className={styles.text}>Total Credits: 82</div>
+                  									<div className={styles.text}>GPA: {gpa.toFixed(2)}</div>
+                  									<div className={styles.text}>Total Credits: {totalcredits}</div>
                 								</div>
               							</div>
             						</div>
@@ -146,8 +197,8 @@ const StudentWhatIfView:FunctionComponent = () => {
               							<div className={styles.body2}>
                 								<div className={styles.infoParent}>
                   									<img className={styles.infoIcon} alt="" src="/Info.svg" />
-                  									<div className={styles.text}>GPA: 3.63</div>
-                  									<div className={styles.text}>Total Credits: 94</div>
+                  									<div className={styles.text} id="hypothetical gpa">GPA: 4.00</div>
+                  									<div className={styles.text} id="hypothetical credits">Total Credits: 12</div>
                 								</div>
               							</div>
             						</div>
@@ -161,9 +212,9 @@ const StudentWhatIfView:FunctionComponent = () => {
           					</div>
           					<div className={styles.divider} />
           					<div className={styles.bottom} id="courselist">
-									{Array.from({ length: 4}, (_, index) => 
+									{Array.from({ length: numcourses }, (_, index) =>
 									(
-										<WhatIfCourseComponent name={"course" + index}/>
+										<WhatIfCourseComponent name={"course" + index} onChange={onGradeChange}/>
 									))}
           					</div>
         				</div>

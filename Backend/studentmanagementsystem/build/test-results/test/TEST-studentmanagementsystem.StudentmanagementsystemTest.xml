@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="studentmanagementsystem.StudentmanagementsystemTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-11-23T09:41:32" hostname="epyc" time="0.023">
+  <properties/>
+  <testcase name="testItWorks()" classname="studentmanagementsystem.StudentmanagementsystemTest" time="0.023"/>
+  <system-out><![CDATA[?[36m10:41:32.308?[0;39m ?[1;30m[Test worker]?[0;39m ?[34mINFO ?[0;39m ?[35mi.m.c.DefaultApplicationContext$RuntimeConfiguredEnvironment?[0;39m - Established active environments: [test]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

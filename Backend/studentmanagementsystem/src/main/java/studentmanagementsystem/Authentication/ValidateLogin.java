@@ -6,7 +6,7 @@ import io.micronaut.serde.annotation.Serdeable;
 public class ValidateLogin
 {
 	private String auth;
-	private String email;
+	private String id;
 	
 	public String getAuth()
 	{
@@ -18,13 +18,13 @@ public class ValidateLogin
 		this.auth = auth;
 	}
 
-	public String getEmail()
+	public String getId()
 	{
-		return email;
+		return id;
 	}
 	
-	public void setEmail(String email)
+	public void setId(String id)
 	{
-		this.email = email;
+		this.id = id;
 	}
 }
