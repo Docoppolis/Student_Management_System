@@ -51,8 +51,6 @@ A full-stack academic scheduling and student management web application designed
 - Java (JDK 17+)
 - Micronaut framework
 - PostgreSQL
-- Docker (optional)
-- Bash terminal or WSL for Windows users
 
 ---
 
