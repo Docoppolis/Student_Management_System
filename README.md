@@ -57,21 +57,41 @@ A full-stack academic scheduling and student management web application designed
 ### Running the App
 
 #### 1. Backend (Micronaut Java)
-Navigate to the backend directory and run:
 
+Navigate to the Backend/studentmanagementsystem directory:
 ```bash
 cd Backend/studentmanagementsystem
-./gradlew run
 ```
+First-time setup (recommended):
+```bash
+./gradlew clean build
+```
+This will clear any cached or broken build artifacts and ensure dependencies are installed properly.
 
-#### 2. Frontend (React + Next.js)
-In a new terminal tab/window:
+To run the backend app:
 
 ```bash
+./gradlew run
+```
+This uses the Gradle wrapper to build and run the Micronaut application using the main class defined in build.gradle.
+
+#### 2. Frontend (React + Next.js)
+In a new terminal tab/window, navigate to the Frontend directory:
+```bash
 cd Frontend
+```
+
+First-time setup:
+```bash
+rm -rf node_modules package-lock.json  # optional but helpful if you're seeing issues
 npm install
+```
+
+To start the frontend development server:
+```bash
 npm run dev
 ```
+This will start the Next.js development server, typically at http://localhost:3000.
 
 ---
 
