@@ -153,6 +153,16 @@ This will start the Next.js development server, typically at http://localhost:30
 - Handled backend operations for the staff dashboard, powering reports and internal statistics
 - Collaborated with frontend team to ensure seamless user navigation and state management
 
+### Developer: **Sean Finch**
+
+#### Personal Contributions:
+- Designed and implemented backend API using Java and Micronaut
+- Created various REST endpoints
+- Developed backend and frontend logic for the grade calculation, what-if, and register/drop
+- Built backend support for student logic
+- Implemented backend functionality for instructor operations
+- Set up frontend code and logic for API requests
+
 ---
 
 ## Notes
