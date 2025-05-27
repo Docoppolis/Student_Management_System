@@ -44,6 +44,28 @@ A full-stack academic scheduling and student management web application designed
 
 ---
 
+## Student Account Visuals
+Login
+![image](https://github.com/user-attachments/assets/d12397d7-9adc-45de-90eb-53f3f1accc57)
+
+Schedule
+![image](https://github.com/user-attachments/assets/d16f6959-5714-45ce-985d-2f06dda413b2)
+
+Degree Progress
+![image](https://github.com/user-attachments/assets/21fba63f-0c0d-4511-8880-96b3b8c9ff6d)
+
+Course Search
+![image](https://github.com/user-attachments/assets/d2dea8da-e8a2-45d8-b824-7d6015f6c8b3)
+
+Add/Drop
+![image](https://github.com/user-attachments/assets/bd7d3022-8d34-4fd4-acca-29f80e6c483c)
+
+GPA Analysis
+![image](https://github.com/user-attachments/assets/ac5f90cf-7e13-4b23-8626-1dd81c954877)
+
+
+---
+
 ## Getting Started
 
 ### Prerequisites
