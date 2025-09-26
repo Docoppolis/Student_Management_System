@@ -185,6 +185,15 @@ This will start the Next.js development server, typically at http://localhost:30
 - Implemented backend functionality for instructor operations
 - Set up frontend code and logic for API requests
 
+### Developer: **Christopher Mitchell**
+
+#### Personal Contributions:
+- Designed and implemented backend API using Java and Micronaut
+- Created frontend design using Figma, optimized to ensure ease-of-use for students, teachers, advisors, and admins
+- Designed relational database used to store all website data using PostgreSQL
+- Wrote SQL queries used in the backend to retrieve data from the database securely
+- Implemented backend functionality for the admin dashboard with detailed logging of all actions modifying data in the system
+
 ---
 
 ## Notes
