@@ -194,6 +194,14 @@ This will start the Next.js development server, typically at http://localhost:30
 - Wrote SQL queries used in the backend to retrieve data from the database securely
 - Implemented backend functionality for the admin dashboard with detailed logging of all actions modifying data in the system
 
+### Developer: **Sebastian Loaiza**
+
+#### Personal Contributions:
+- Helped layout the framework of our different type of user pages on Figma
+- Assisted in transferring the figma layout to frontend code for students, advisors, and instructors
+- Helped in the backend for staff functionality for displaying and adding students, instructors, and courses
+- Integrated AG Grid to improve the usability, sorting, and filtering of the different data per page
+
 ---
 
 ## Notes
